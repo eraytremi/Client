@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
+    
+    <Style x:Key="menuButtonItem" TargetType="fa:IconImage">
+        <Setter Property="Width" Value="23"/>
+        <Setter Property="Height" Value="23"/>
+        <Setter Property="Margin" Value="35 0 20 0"/>
+        <Setter Property="Foreground" Value="#ffffff"/>
+    </Style>
+</ResourceDictionary>

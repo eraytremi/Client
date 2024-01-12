@@ -1,0 +1,173 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel x:Name="LoginPage">
+                <TextBlock Text="Giriş Yap"  HorizontalAlignment="Center" FontSize="25"/>
+                <StackPanel>
+                    <Grid>
+                        <fa:IconImage Icon="User" Height="20"/>
+                        <TextBlock x:Name="textEmail" MouseDown="textEmail_MouseDown"  Text="Email" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtEmail" TextChanged="txtEmail_TextChanged" Style="{StaticResource textBox}"/>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel>
+                    <Grid>
+                        <fa:IconImage Icon="User" Height="20"/>
+                        <TextBlock x:Name="textPassword" MouseDown="textPassword_MouseDown"  Text="Şifre" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtPassword" TextChanged="txtPassword_TextChanged"  Style="{StaticResource textBox}"/>
+                    </Grid>
+                    <Button x:Name="forgotPassword" Click="forgotPassword_Click"  Content="Şifremi Unuttum!" />
+                    <Button x:Name="signUp" Click="signUp_Click"  Content="Kayıt Ol" />
+                    <Button x:Name="logInButton" Click="logInButton_Click"  Content="Giriş Yap" />
+                </StackPanel>
+            </StackPanel>
+            
+            <StackPanel  x:Name="RegisterPage"  Visibility="Collapsed" Style="{StaticResource RegisterPage}">
+                <Border>
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:IconImage Icon="User" Height="20" Width="20"/>
+                        <TextBlock x:Name="textFirstName" MouseDown="textFirstName_MouseDown"  Text="Ad" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtFirstName" TextChanged="textFirstName_TextChanged"  Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+
+                <Border>
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:IconImage Icon="User" Height="20" Width="20"/>
+                        <TextBlock x:Name="textLastName" MouseDown="textLastName_MouseDown" Text="SoyAd" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtLastName" TextChanged="textLastName_TextChanged"  Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+
+                <Border>
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:IconImage Icon="Phone" Height="20" Width="20"/>
+                        <TextBlock x:Name="textPhoneNumber" MouseDown="textPhoneNumber_MouseDown"  Text="Telefon Numarası" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtPhoneNumber" TextChanged="textPhoneNumber_TextChanged"  Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+
+
+                <Border>
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:IconImage Icon="ListNumeric" Height="20" Width="20"/>
+                        <TextBlock x:Name="textIdNumber" MouseDown="textIdNumber_MouseDown"  Text="TCNo" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtIdNumber" TextChanged="textIdNumber_TextChanged"  Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+
+
+                <Border>
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:IconImage Icon="Voicemail" Height="20" Width="20"/>
+                        <TextBlock x:Name="textEmailReg" MouseDown="textEmailReg_MouseDown"  Text="Email" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtEmailReg" TextChanged="textEmailReg_TextChanged"  Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+                <Border>
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:IconImage Icon="IdCard" Height="20" Width="20"/>
+                        <TextBlock x:Name="textPasswordReg" MouseDown="textPasswordReg_MouseDown"  Text="Şifre" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtPasswordReg" TextChanged="textPasswordReg_TextChanged"  Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+                <Border >
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:IconImage Icon="FileImage" Height="20"/>
+                        <Image x:Name="imgSelectedImage" Height="100" Width="100" Stretch="Fill"/>
+                        <Button x:Name="btnSelectImage" Content="Resim Seç" Margin="10" Click="btnSelectImage_Click"/>
+                    </Grid>
+                </Border>
+                <Button x:Name="btnAddUser" Click="btnAddUser_Click"  Content="KAYIT OL" />
+                <Button x:Name="btnBack" Click="btnBack_Click"  Content="Geri Gel" />
+            </StackPanel>
+           
+            <StackPanel x:Name="UpdatePassword" Visibility="Collapsed" >
+                <Border>
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:IconImage Icon="Voicemail" Height="20" Width="20"/>
+                        <TextBlock x:Name="textEmailForget" MouseDown="textEmailForget_MouseDown"  Text="Email" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtEmailForget" TextChanged="txtEmailForget_TextChanged"  Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+                <Border>
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:IconImage Icon="IdCard" Height="20" Width="20"/>
+                        <TextBlock x:Name="textPasswordLast" MouseDown="textPasswordLast_MouseDown"  Text="Şifre" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtPasswordLast" TextChanged="txtPasswordLast_TextChanged"  Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+                <Border>
+                    <Grid Margin="7 9">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <fa:IconImage Icon="IdCard" Height="20" Width="20"/>
+                        <TextBlock x:Name="textPasswordNew" MouseDown="textPasswordNew_MouseDown"  Text="Şifreyi bir daha gir" Style="{StaticResource textBlock}"/>
+                        <TextBox x:Name="txtPasswordNew" TextChanged="txtPasswordNew_TextChanged"  Style="{StaticResource textBox}"/>
+                    </Grid>
+                </Border>
+                <Button x:Name="btnUpdatePassword" Click="btnUpdatePassword_Click"  Content="Yenile" />
+                <Button x:Name="btnBackLogin" Click="btnBackLogin_Click"  Content="Geri Gel" />
+            </StackPanel>
+        </StackPanel>
+        
+        
+    </Grid>
+</Window>
